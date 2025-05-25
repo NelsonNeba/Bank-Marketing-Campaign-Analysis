@@ -4,7 +4,7 @@
 
 This project analyzes a dataset from a direct marketing campaign conducted by a Portuguese banking institution. The campaign involved outreach via phone calls, aiming to encourage customers to subscribe to a term deposit. The primary goal of this analysis is to identify key factors influencing subscription success and provide actionable insights to optimize future marketing strategies.
 
-The analysis was performed using [Mention your primary tool, e.g., Microsoft Excel, Python (Pandas, Matplotlib, Seaborn), R, etc.].
+The analysis was performed using [Mention your primary tool, e.g., Microsoft Excel, 
 
 **Live Dashboard/Report (if applicable):** [Link to your deployed Power BI report, Tableau Public dashboard, Google Data Studio report, or a static image/PDF of your Excel dashboard]
 
@@ -42,8 +42,6 @@ This analysis seeks to provide data-driven answers to inform these objectives.
 
 The dataset used for this analysis is the "Bank Marketing Data Set" from the UCI Machine Learning Repository. It contains information on [Number] instances (customer contacts) with [Number] attributes, including customer demographics, last contact information, and previous campaign outcomes.
 
-*   **Source:** [Link to UCI dataset, e.g., https://archive.ics.uci.edu/ml/datasets/bank+marketing]
-*   **Citation (if required by source):** [Moro et al., 2014] S. Moro, P. Cortez and P. Rita. A Data-Driven Approach to Predict the Success of Bank Telemarketing. Decision Support Systems, Elsevier, 62:22-31, June 2014.
 *   **Target Variable:** `y` - Has the client subscribed a term deposit? (yes/no)
 
 ## Methodology
@@ -107,7 +105,7 @@ This analysis aimed to answer the following stakeholder-relevant questions:
 *   **Campaign Mechanics:**
     *   `Cellular` contact is the most effective channel.
     *   Longer `CallDurations` are strongly correlated with subscription success (avg. 9.21 mins for subscribers vs. 3.77 mins for non-subscribers).
-    *   Subscription rates peak in `May` and are lowest in `December`.
+    *   Subscription rates peak in `Oct` and are lowest in `December`.
 *   **Low Impact Factor:** `Credit Default` status showed minimal difference in subscription rates.
 
 ## Visualizations Showcase
