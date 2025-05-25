@@ -40,7 +40,7 @@ This analysis seeks to provide data-driven answers to inform these objectives.
 
 ## Data Source
 
-The dataset used for this analysis is the "Bank Marketing Data Set" from the UCI Machine Learning Repository. It contains information on [Number] instances (customer contacts) with [Number] attributes, including customer demographics, last contact information, and previous campaign outcomes.
+The dataset used for this analysis is the "Bank Marketing Data Set" from InternPulse. It contains information on [Number] instances (customer contacts) with [Number] attributes, including customer demographics, last contact information, and previous campaign outcomes.
 
 *   **Target Variable:** `y` - Has the client subscribed a term deposit? (yes/no)
 
@@ -48,7 +48,7 @@ The dataset used for this analysis is the "Bank Marketing Data Set" from the UCI
 
 ### Data Import & Cleaning
 
-*   The raw data (JSON/CSV format) was imported into [Your Tool, e.g., Excel using Power Query, Python using Pandas].
+*   The raw data (JSON/CSV format) was imported into Excel using Power Query
 *   Initial data inspection was performed to understand data types, structure, and potential issues.
 *   **Cleaning steps included:**
     *   Handling missing values (e.g., for `job`, `education` - specify your strategy).
@@ -75,11 +75,11 @@ New features were created to enhance the analysis and derive deeper insights:
 
 ### Visualization
 
-[Your Tool, e.g., Excel charts, Matplotlib/Seaborn, Tableau] was used to create a dashboard/set of visualizations to communicate findings effectively. Key charts include:
+Excel charts was used to create a dashboard/set of visualizations to communicate findings effectively. Key charts include:
 *   Bar charts for comparing subscription rates across categorical segments.
 *   Line charts for trends (e.g., monthly rates, rates by days since last contact).
 *   Pie chart for overall subscription breakdown.
-*   [Mention other chart types you used]
+
 
 ## Key Questions Addressed
 
@@ -109,19 +109,15 @@ This analysis aimed to answer the following stakeholder-relevant questions:
 *   **Low Impact Factor:** `Credit Default` status showed minimal difference in subscription rates.
 
 ## Visualizations Showcase
-
-*(Embed 2-3 key static images of your best charts/dashboard here if your platform allows. Otherwise, describe them or link to a separate visual report.)*
-
-**Example:**
 *   A bar chart showing the dramatic difference in subscription rates by `PreviousOutcome`.
     ```
-    [Image of your PreviousOutcome chart]
+    [Image of  PreviousOutcome chart]
     ```
 *   A bar chart highlighting subscription rates by `Job` or `LoanStatus`.
     ```
-    [Image of your Job/LoanStatus chart]
+    [Image of  Job/LoanStatus chart]
     ```
-*   [Link to full dashboard/report if hosted online]
+*   [Dashboard]
 
 ## Actionable Recommendations
 
