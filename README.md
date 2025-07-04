@@ -1,121 +1,143 @@
-# Bank Term Deposit Campaign Performance Dashboard
+# Bank Marketing Campaign Analysis for Term Deposit Subscription
 
 ## Project Overview
 
-This project focuses on analyzing the effectiveness of a direct marketing campaign conducted by a Portuguese bank. The primary goal is to identify key patterns and provide actionable insights to improve subscription rates for term deposit products. The analysis is performed using Microsoft Excel, leveraging its powerful data transformation and visualization capabilities.
+This project analyzes a dataset from a direct marketing campaign conducted by a Portuguese banking institution. The campaign involved outreach via phone calls, aiming to encourage customers to subscribe to a term deposit. The primary goal of this analysis is to identify key factors influencing subscription success and provide actionable insights to optimize future marketing strategies.
 
-## Objectives
+The analysis was performed using [Mention your primary tool, e.g., Microsoft Excel, 
 
-* **Analyze Campaign Effectiveness:** Evaluate the success metrics of the direct marketing campaign.
+**Live Dashboard/Report (if applicable):** [Link to your deployed Power BI report, Tableau Public dashboard, Google Data Studio report, or a static image/PDF of your Excel dashboard]
 
-* **Identify Key Patterns:** Discover which customer segments and campaign strategies lead to higher term deposit subscriptions.
+## Table of Contents
 
-* **Provide Actionable Insights:** Generate data-driven recommendations for optimizing future marketing efforts and improving conversion rates.
+*   [Business Problem](#business-problem)
+*   [Data Source](#data-source)
+*   [Methodology](#methodology)
+    *   [Data Import & Cleaning](#data-import--cleaning)
+    *   [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+    *   [Feature Engineering](#feature-engineering)
+    *   [Visualization](#visualization)
+*   [Key Questions Addressed](#key-questions-addressed)
+*   [Key Findings & Insights](#key-findings--insights)
+*   [Visualizations Showcase](#visualizations-showcase)
+*   [Actionable Recommendations](#actionable-recommendations)
+*   [Tools & Technologies](#tools--technologies)
+*   [Project Structure](#project-structure)
+*   [How to Use/Reproduce](#how-to-usereproduce)
+*   [Future Work](#future-work)
+*   [Author](#author)
+*   [Acknowledgments](#acknowledgments)
 
-## Tools and Technologies
+## Business Problem
 
-* **Microsoft Excel:**
+The banking institution aims to improve the efficiency and effectiveness of its direct marketing campaigns for term deposits. Key business objectives include:
+*   Increasing the overall subscription rate for term deposits.
+*   Identifying customer segments with a higher propensity to subscribe.
+*   Optimizing campaign outreach strategies (e.g., contact timing, channels).
+*   Understanding the impact of customer demographics and financial profiles on subscription decisions.
 
-  * **Power Query:** Used for data ingestion, cleaning, transformation, and creating calculated columns (e.g., `AgeGroup`, `WasPreviouslyContacted`, `CallDuration (Minutes)`, `Combined Loan Status`).
+This analysis seeks to provide data-driven answers to inform these objectives.
 
-  * **Power Pivot (Data Model):** Utilized for creating advanced DAX (Data Analysis Expressions) measures to calculate key performance indicators (KPIs) like conversion rates and average metrics.
+## Data Source
 
-  * **Pivot Tables:** Employed for multi-dimensional analysis and segmentation of customer data.
+The dataset used for this analysis is the "Bank Marketing Data Set" from InternPulse. It contains information on [Number] instances (customer contacts) with [Number] attributes, including customer demographics, last contact information, and previous campaign outcomes.
 
-  * **Charts:** Used to visualize insights, making complex data easily understandable.
+*   **Target Variable:** `y` - Has the client subscribed a term deposit? (yes/no)
 
-  * **Slicers:** Implemented for interactive filtering, allowing stakeholders to dynamically explore data segments.
+## Methodology
 
-* **Gemini API (LLM Integration - *Future Enhancement/Conceptual*):**
+### Data Import & Cleaning
 
-  * *While the core dashboard is Excel-based, this project can be extended with LLM capabilities (e.g., via a web interface) to:*
+*   The raw data (JSON/CSV format) was imported into Excel using Power Query
+*   Initial data inspection was performed to understand data types, structure, and potential issues.
+*   **Cleaning steps included:**
+    *   Handling missing values (e.g., for `job`, `education` - specify your strategy).
+    *   Standardizing categorical data (e.g., converting text to consistent case).
+    *   Correcting data types (e.g., ensuring numerical fields were numeric, date fields were dates).
+    *   Renaming columns for clarity (e.g., `y` to `SubscribedTermDeposit`).
 
-    * Generate natural language summaries of dashboard insights.
+### Exploratory Data Analysis (EDA)
 
-    * Provide predictive analysis on customer segments.
+Descriptive statistics and visualizations were used to understand the distribution of individual variables and their relationships with the target variable (`SubscribedTermDeposit`).
+*   Analyzed the overall subscription rate (12.0%).
+*   Examined distributions of numeric features (e.g., `Age`, `AccountBalance`, `CallDurationSeconds`) using histograms and summary statistics.
+*   Investigated frequency distributions of categorical features (e.g., `Job`, `MaritalStatus`, `EducationLevel`).
+*   Bivariate analysis was conducted to assess the impact of each feature on subscription rates using PivotTables/group-by operations and appropriate charts.
 
-    * Suggest personalized campaign messages based on customer profiles.
+### Feature Engineering
 
-## Key Features & Insights
+New features were created to enhance the analysis and derive deeper insights:
+*   `AgeGroup`: Categorizing customers into age brackets.
+*   `WasPreviouslyContacted`: Binary flag based on `pdays`.
+*   `CampaignDate`: Combining `day` and `month` into a proper date format.
+*   `CallDurationMinutes`: Converting call duration from seconds to minutes.
+*   `CombinedLoanStatus`: Categorizing customers based on housing and personal loan status ('No Loan', 'Only Housing Loan', etc.).
 
-The dashboard provides a comprehensive view of the campaign's performance, answering critical stakeholder questions:
+### Visualization
 
-* **Overall Campaign Performance:** Clear KPIs for total contacts, total subscriptions, and the overall conversion rate.
-
-* **Customer Segmentation:** Analysis of subscription rates across various demographic segments, including:
-
-  * **Age Groups:** Identifying which age demographics are most receptive.
-
-  * **Job Titles & Education Levels:** Understanding the impact of professional and educational backgrounds.
-
-  * **Marital Status & Loan Status:** Assessing the influence of personal circumstances.
-
-* **Contact Strategy Effectiveness:** Insights into the best contact methods and months for outreach.
-
-* **Previous Campaign Impact:** Analysis of how prior interactions (success, failure, unknown) affect current subscription likelihood.
-
-* **Call Duration Optimization:** Examination of the relationship between call length and conversion success.
-
-* **Financial Profile Analysis:** Understanding the average account balance of subscribers versus non-subscribers.
-
-* **Interactive Dashboard:** Slicers enable dynamic filtering and exploration of data, allowing stakeholders to drill down into specific segments.
-
-## How to Use / View the Project
-
-1. **Download the Dataset:** Obtain the `Bank Marketing Campaign.csv` dataset.
-
-2. **Open in Excel:** Load the `Bank Marketing Campaign.csv` file into Microsoft Excel.
-
-3. **Utilize Power Query:** Ensure the data is loaded via Power Query, with all the specified transformations and conditional columns applied.
-
-4. **Build Data Model & DAX Measures:** Confirm the data is added to the Data Model and the DAX measures (`Subscribed_Yes_Count`, `Total_Customers`, `Conversion_Rate_Percentage`, `Avg_Call_Duration_Subscribers_Mins`) are created as described in the project guide.
-
-5. **Construct the Dashboard:** Follow the dashboard layout blueprint to create Pivot Tables, Charts, and Slicers, linking them to your Data Model and DAX measures.
-
-## Insights and Recommendations
-
-Based on the analysis, here are some key insights and actionable recommendations:
-
-* **Target High-Potential Segments:**
-
-  * Identify specific `AgeGroup`, `Job Title`, and `EducationLevel` combinations that consistently show higher subscription rates. Tailor future campaigns to prioritize these segments.
-
-  * For instance, if "Middle-Aged Adults" in "Management" with "Tertiary" education have a significantly higher conversion, allocate more resources to reaching similar profiles.
-
-* **Optimize Call Strategy:**
-
-  * Analyze the `CallDuration (Minutes)` to identify an optimal range that correlates with higher subscription rates. Train sales representatives to aim for this duration, avoiding overly short or excessively long calls that might lead to disengagement.
-
-  * For example, if calls between 3-5 minutes yield the best results, focus on concise and impactful pitches within that timeframe.
-
-* **Leverage Previous Interactions:**
-
-  * Customers with a `PreviousCampaignOutcome` of 'Success' are highly valuable; prioritize re-engagement with these individuals.
-
-  * For those with 'Failure' or 'Other' outcomes, tailor the messaging to address past concerns or offer different product variations. Avoid treating them as completely new leads.
-
-* **Seasonal Campaign Adjustments:**
-
-  * Examine `ContactMonth` trends to identify peak performance months. Adjust campaign scheduling to maximize reach and conversion during these periods. Conversely, reduce efforts in low-performing months unless specific strategies can overcome seasonal challenges.
-
-* **Loan Status Impact:**
-
-  * Understand how `Combined Loan Status` (e.g., "Only Housing Loan" vs. "No Loan") influences subscription. This can help in segmenting customers for specific product offerings or financial advice, as their existing loan commitments might affect their willingness to invest in a term deposit.
-
-* **Refine Messaging based on Financial Profile:**
-
-  * If `AccountBalance` shows a significant difference between subscribers and non-subscribers, adapt marketing messages. For those with lower balances, emphasize the benefits of starting small or the security of term deposits. For higher balances, focus on growth and wealth management.
-
-## Future Enhancements
-
-* **Predictive Modeling:** Implement machine learning models (e.g., Logistic Regression) to predict subscription likelihood for new customers.
-
-* **Advanced Segmentation:** Utilize clustering algorithms to identify new, high-value customer segments.
-
-* **Automated Reporting:** Integrate with VBA or Python to automate report generation and distribution.
+Excel charts was used to create a dashboard/set of visualizations to communicate findings effectively. Key charts include:
+*   Bar charts for comparing subscription rates across categorical segments.
+*   Line charts for trends (e.g., monthly rates, rates by days since last contact).
+*   Pie chart for overall subscription breakdown.
 
 
+## Key Questions Addressed
 
-## Author
+This analysis aimed to answer the following stakeholder-relevant questions:
+1.  Which customer segments are most receptive to our term deposit offers, and how can we better target them?
+2.  How effective was our previous campaign engagement in driving current subscriptions, and what's the optimal timing to re-engage past customers?
+3.  Are our current campaign outreach strategies efficient? Which channels and contact frequencies yield the best results?
+4.  Does a customer's existing financial relationship with us significantly impact their likelihood to subscribe?
+5.  What is the overall success of this marketing campaign, and what are key indicators of engaged customers?
 
-Nelson M.
+## Key Findings & Insights
+
+*   **Overall subscription rate:** 12.0%.
+*   **Previous Success is Key:** Customers with a previous successful campaign outcome have a **64.34%** subscription rate, significantly higher than any other group.
+*   **Re-engagement Pays Off:** Previously contacted customers subscribe at 22.55%, compared to 9.10% for those not previously contacted. The optimal re-contact window appears to be 91-180 days post-last contact.
+*   **Target Demographics:**
+    *   `Retired` individuals show the highest subscription rates by job.
+    *   Customers with `Tertiary` education are more likely to subscribe.
+    *   `Single` and `Divorced` individuals have higher rates than `Married`.
+*   **Financial Profile:**
+    *   Customers with `No Loan` obligations subscribe at a higher rate (16.8%).
+    *   Customers with lower `AccountBalance` (e.g., < €10,000) show higher propensity.
+*   **Campaign Mechanics:**
+    *   `Cellular` contact is the most effective channel.
+    *   Longer `CallDurations` are strongly correlated with subscription success (avg. 9.21 mins for subscribers vs. 3.77 mins for non-subscribers).
+    *   Subscription rates peak in `Oct` and are lowest in `December`.
+*   **Low Impact Factor:** `Credit Default` status showed minimal difference in subscription rates.
+
+## Visualizations Showcase
+*   A bar chart showing the dramatic difference in subscription rates by `PreviousOutcome`.
+    ```
+    [Image of  PreviousOutcome chart]
+    ```
+*   A bar chart highlighting subscription rates by `Job` or `LoanStatus`.
+    ```
+    [Image of  Job/LoanStatus chart]
+    ```
+*   [Dashboard]
+
+## Actionable Recommendations
+
+Based on the analysis, the following recommendations are proposed to the banking institution:
+1.  **Prioritize Previously Successful Customers:** Dedicate resources to re-engage customers with a previous 'success' outcome, as they represent the highest conversion potential.
+2.  **Optimize Re-contact Strategy:** Implement a re-contact schedule targeting previously contacted customers (especially non-successful ones) within the 91-180 day window.
+3.  **Refine Target Segmentation:** Focus marketing efforts on:
+    *   Demographic segments: Retired, Tertiary education, Single/Divorced.
+    *   Financial segments: Customers with No Loans, lower account balances.
+4.  **Enhance Channel & Call Strategy:**
+    *   Maximize use of `Cellular` for outreach.
+    *   Train agents on effective engagement techniques to foster longer, quality conversations, while being mindful that duration is an outcome of interest, not just a target.
+5.  **Strategic Campaign Timing:** Plan campaigns to capitalize on higher response months (like May) and consider alternative strategies or offers for lower response months (like December).
+6.  **De-prioritize Non-Differentiating Factors:** Credit default status may not require specific segmentation for this product.
+
+## Tools & Technologies
+
+*   **Data Cleaning & Transformation:** [e.g., Microsoft Excel (Power Query), 
+*   **Data Analysis:** [e.g., Microsoft Excel (PivotTables, Formulas), 
+*   **Data Visualization:** [e.g., Microsoft Excel (Charts), 
+*   **Version Control (Optional):** [Git, GitHub]
+*   **Project Management (Optional):** [Slake]
+
