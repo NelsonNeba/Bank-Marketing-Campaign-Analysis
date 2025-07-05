@@ -5,7 +5,7 @@
 This project analyzes a dataset from a direct marketing campaign conducted by a Portuguese banking institution. The campaign involved outreach via phone calls, aiming to encourage customers to subscribe to a term deposit. The primary goal of this analysis is to identify key factors influencing subscription success and provide actionable insights to optimize future marketing strategies.
 
 **Dashboard/Report :** 
-![dashboard](Assets/Dashboard.png)
+![dashboard](assets/Dashboard.png)
 ## Table of Contents
 
 * [Business Problem](#business-problem)
@@ -106,14 +106,13 @@ This analysis aimed to answer the following stakeholder-relevant questions:
 
 ## Visualizations Showcase
 * A bar chart showing the dramatic difference in subscription rates by `PreviousCampaignOutcome`.
-    ```
-    [Assets\image4.png]
-    ```
+ 
+    ![](assets/image4.png)
+  
 * A bar chart highlighting subscription rates by `Job Title` or `Combined Loan Status`.
-    ```
-    [Assets\image5.png]
-    ```
-* [Assets\image1.png]
+ 
+![](assets/image5.png)    
+* ![](assets/image1.png)
 
 ## Actionable Recommendations
 
