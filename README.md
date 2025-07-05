@@ -4,7 +4,8 @@
 
 This project analyzes a dataset from a direct marketing campaign conducted by a Portuguese banking institution. The campaign involved outreach via phone calls, aiming to encourage customers to subscribe to a term deposit. The primary goal of this analysis is to identify key factors influencing subscription success and provide actionable insights to optimize future marketing strategies.
 
-**Live Dashboard/Report :** (/Assets/dashboard.png)
+**Dashboard/Report :** 
+(/Assets/dashboard.png)
 
 ## Table of Contents
 
